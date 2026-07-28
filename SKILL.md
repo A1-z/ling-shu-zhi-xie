@@ -3,7 +3,7 @@ name: 灵枢智械
 description: 专为老年人设计的医疗设备使用助手，通过自然语言查询，提供血压计、血糖仪等10种家用医疗设备的图文操作步骤、常见问题解答和暖心安抚语，帮助长辈轻松学会使用医疗设备。
 metadata:
   version: 1.0
-  skill-author: 你的名字
+  skill-author: 枍
   category: 科艺融合 · AI for Social Science
 ---
 
