@@ -11,7 +11,7 @@
         {"step": 3, "icon": "📊", "action": "读数值", "detail": "保持安静，等待屏幕数值稳定。高压(收缩压)低于120，低压(舒张压)低于80为正常范围。", "tip": "测量前静坐5分钟，结果更准哦！"}
       ],
       "pdf_url": "https://www.manualslib.com/manual/3606291/Yuwell-Ye670d.html",
-      "image_url": "https://www.manualslib.com/manual/3606291/Yuwell-Ye670d.html",
+      "image_url": "",
       "faq": [
         {"q": "电池怎么装？", "a": "打开底部电池盖，按正负极标识装入4节7号电池。"},
         {"q": "为什么测出来偏高？", "a": "可能是袖带绑得太紧或测量时说话，请静坐5分钟后重测。"}
