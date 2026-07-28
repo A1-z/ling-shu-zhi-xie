@@ -10,8 +10,8 @@
         {"step": 2, "icon": "🔘", "action": "按开机", "detail": "按下正面最大的圆形【电源/启动】键，屏幕亮起并显示'00'表示就绪。", "tip": "如果没反应，检查电池正负极是否装反。"},
         {"step": 3, "icon": "📊", "action": "读数值", "detail": "保持安静，等待屏幕数值稳定。高压(收缩压)低于120，低压(舒张压)低于80为正常范围。", "tip": "测量前静坐5分钟，结果更准哦！"}
       ],
-      "pdf_url": "https://www.yuyueshop.com/DownLoad/14853.html",
-      "image_url": "https://storage.yuwell-thailand.com/img/product/image_product_Ih6gHN5mcVcQ.pdf",
+      "pdf_url": "https://www.manualslib.com/manual/3606291/Yuwell-Ye670d.html",
+      "image_url": "https://www.manualslib.com/manual/3606291/Yuwell-Ye670d.html",
       "faq": [
         {"q": "电池怎么装？", "a": "打开底部电池盖，按正负极标识装入4节7号电池。"},
         {"q": "为什么测出来偏高？", "a": "可能是袖带绑得太紧或测量时说话，请静坐5分钟后重测。"}
@@ -27,8 +27,8 @@
         {"step": 2, "icon": "📄", "action": "插入试纸", "detail": "将试纸插入血糖仪，屏幕显示'滴血'符号后，将血滴轻触试纸吸血口。", "tip": "血滴要够饱满，不要涂抹。"},
         {"step": 3, "icon": "📊", "action": "读取结果", "detail": "等待5-8秒，屏幕显示血糖值。空腹3.9-6.1为正常，餐后低于7.8为正常。", "tip": "记录每次数值，复诊时带给医生看。"}
       ],
-      "pdf_url": "https://www.yuyueshop.com/DownLoad/14887.html",
-      "image_url": "https://storage.yuwell-thailand.com/img/product/image_product_C9dHEQAsNhyk.pdf",
+      "pdf_url": "https://max.book118.com/html/2025/0819/8120007044007123.shtm",
+      "image_url": "https://max.book118.com/html/2025/0819/8120007044007123.shtm",
       "faq": [
         {"q": "试纸过期了还能用吗？", "a": "绝对不能！过期试纸结果不准，请使用保质期内的试纸。"},
         {"q": "采血针能重复用吗？", "a": "不能！每次必须换新的采血针，避免感染。"}
@@ -44,8 +44,8 @@
         {"step": 2, "icon": "💧", "action": "加水湿化", "detail": "打开湿化瓶，加入纯净水至刻度线（约2/3位置），拧紧瓶盖。", "tip": "必须用纯净水，不要用自来水，防止结垢。"},
         {"step": 3, "icon": "😤", "action": "戴鼻氧管", "detail": "将鼻氧管接头插入出氧口，戴好鼻塞，调节流量至医生建议的数值（通常1-3L/min）。", "tip": "吸氧时间每次15-30分钟，不要长时间连续吸。"}
       ],
-      "pdf_url": "https://www.yuyueshop.com/DownList/1.html",
-      "image_url": "https://www.yuyueshop.com/article/1479298.html?view=1",
+      "pdf_url": "https://max.book118.com/html/2025/0816/8030036104007122.shtm",
+      "image_url": "https://www.bodocs.net/doc/0d16579163.html",
       "faq": [
         {"q": "制氧机有异味怎么办？", "a": "检查湿化瓶是否干净，更换纯净水；若仍有异味，可能是滤芯需要更换。"},
         {"q": "流量调多大合适？", "a": "遵医嘱。保健吸氧一般1-2L/min，治疗吸氧遵医嘱调整。"}
@@ -61,7 +61,7 @@
         {"step": 2, "icon": "👂", "action": "放入耳道", "detail": "轻轻将探头放入耳道，确保耳套紧贴耳道口。", "tip": "3岁以下儿童使用时请将耳垂向后下方拉直耳道。"},
         {"step": 3, "icon": "📊", "action": "读取结果", "detail": "按下测量键，约1秒听到'滴'声后取出，屏幕显示体温。正常范围：36.5-37.2℃。", "tip": "超过37.3℃为低烧，超过38.5℃建议就医。"}
       ],
-      "pdf_url": "https://manualspro.net/80488-yuwell-yt300-series-medical-electronic-thermometer-user-manual",
+      "pdf_url": "https://manualspro.net/pdf/80488-yuwell-yt300-series-medical-electronic-thermometer-user-manual-pdf",
       "image_url": "https://www.manualslib.com/guide/3167869/yuwell-yt-2-infrared-thermometer-manual.html",
       "faq": [
         {"q": "耳温枪测左耳和右耳结果不一样？", "a": "左右耳温度可能相差0.1-0.2℃，建议固定测同一侧耳。"},
@@ -78,8 +78,8 @@
         {"step": 2, "icon": "🔘", "action": "按开机", "detail": "按下顶部的【电源】键，屏幕亮起并开始闪烁检测。", "tip": "手不要抖动，保持静坐状态。"},
         {"step": 3, "icon": "📊", "action": "读结果", "detail": "等待约10秒，屏幕显示血氧饱和度（SpO2）和脉率。正常血氧：95%-100%，脉率：60-100次/分钟。", "tip": "血氧低于94%建议及时就医。"}
       ],
-      "pdf_url": "https://www.yuyueshop.com/DownLoad/14901.html",
-      "image_url": "https://www.shouce365.com/yuwell/15299746426795avnx1/4.html",
+      "pdf_url": "https://max.book118.com/html/2023/0408/8142015142005054.shtm",
+      "image_url": "https://m.ofweek.com/medical/2020-06/ART-11164-8330-30445807_2.html",
       "faq": [
         {"q": "指甲油影响测量吗？", "a": "会影响！深色指甲油会阻挡红外线，导致读数不准，请先卸掉。"},
         {"q": "血氧仪显示不出数字？", "a": "检查手指是否放正，或尝试换一只手重新测量。"}
@@ -95,8 +95,8 @@
         {"step": 2, "icon": "😷", "action": "戴面罩/咬嘴", "detail": "将面罩或咬嘴连接到雾化杯出气口，成人用咬嘴，儿童用面罩。", "tip": "面罩要贴合口鼻，不要漏气。"},
         {"step": 3, "icon": "🔘", "action": "开机雾化", "detail": "按下【电源】键，雾化开始，保持平稳呼吸，雾化时间约10-15分钟。", "tip": "雾化结束后及时清洗雾化杯，防止细菌滋生。"}
       ],
-      "pdf_url": "https://www.yuyueshop.com/DownLoad/14896.html",
-      "image_url": "https://www.shouce365.com/yuwell/15299746426795avnx1/4.html",
+      "pdf_url": "https://max.book118.com/html/2025/0823/7144055053010150.shtm",
+      "image_url": "https://max.book118.com/html/2025/0823/7144055053010150.shtm",
       "faq": [
         {"q": "雾化器不出雾怎么办？", "a": "检查药液是否太少或太多，清洗雾化杯喷嘴，确认电源接触良好。"},
         {"q": "雾化后需要漱口吗？", "a": "需要！雾化后漱口可以减少药物在口腔残留，预防口腔真菌感染。"}
@@ -146,7 +146,7 @@
         {"step": 2, "icon": "🎯", "action": "定位穴位", "detail": "将灸盒底部贴在需要艾灸的部位（如膝盖、腹部），用绑带固定。", "tip": "初次使用从10分钟开始，皮肤红热即可。"},
         {"step": 3, "icon": "📳", "action": "调节温度", "detail": "旋转顶部的通风口调节温度：开大通风温度升高，关小则温度降低。", "tip": "感觉太烫立即调小或取下，防止烫伤。"}
       ],
-      "pdf_url": "",
+      "pdf_url": "https://doc.quark.cn/preview/tongyongshenghuo-shuomingshu-shuomingshu/75C0FF3710D9DD1A9DC3F9CB00FCAA05",
       "image_url": "",
       "faq": [
         {"q": "艾灸后皮肤发红正常吗？", "a": "正常！艾灸后局部皮肤发红是温热效应，一般几小时后消退。如有水泡请暂停。"},
@@ -164,7 +164,7 @@
         {"step": 3, "icon": "📳", "action": "调节模式", "detail": "按【电源】开机，选择模式（按摩/针灸/推拿），调节强度至舒适感（有轻微刺麻感但不疼痛）。", "tip": "每次使用15-30分钟，从低强度开始，逐渐适应。"}
       ],
       "pdf_url": "https://www.298.cn/show-18958.html",
-      "image_url": "https://www.298.cn/show-18958.html",
+      "image_url": "https://www.manualslib.com/manual/4247005/Yuwell-Sdp-330.html",
       "faq": [
         {"q": "理疗仪能每天用吗？", "a": "建议每天1次，连续使用不超过15天，休息几天后再用。"},
         {"q": "电极片用多久更换？", "a": "电极片粘贴力下降时需更换，一般可用20-30次。"}
