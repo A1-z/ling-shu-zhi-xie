@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 import json
-import re
+import base64
 
 # ---------- 页面配置 ----------
 st.set_page_config(
@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# ---------- 自定义CSS（医疗蓝主题 + 适老化） ----------
+# ---------- 自定义CSS（医疗蓝主题 + 适老化 + 输入框文字深色） ----------
 st.markdown("""
 <style>
     /* 全局背景 */
@@ -62,13 +62,18 @@ st.markdown("""
         display: inline-block;
         margin-top: 4px;
     }
-    /* 搜索框放大（适老化） */
+    /* 搜索框 - 输入文字深蓝色，占位符灰色可见 */
     .stTextInput input {
         font-size: 22px !important;
         padding: 16px 20px !important;
         border-radius: 30px !important;
         border: 2px solid #2e86c1 !important;
         background: white !important;
+        color: #1a5276 !important;  /* ← 输入文字深蓝色 */
+    }
+    .stTextInput input::placeholder {
+        color: #7f8c8d !important;   /* ← 占位文字灰色 */
+        font-weight: 400;
     }
     .stTextInput input:focus {
         box-shadow: 0 0 0 3px rgba(46, 134, 193, 0.3) !important;
@@ -89,6 +94,14 @@ st.markdown("""
     .stButton button:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 6px 25px rgba(26, 82, 118, 0.4) !important;
+    }
+    /* 语音播报按钮特殊样式（浅色） */
+    .voice-btn button {
+        background: linear-gradient(135deg, #28b463, #2ecc71) !important;
+        box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3) !important;
+    }
+    .voice-btn button:hover {
+        box-shadow: 0 6px 25px rgba(46, 204, 113, 0.4) !important;
     }
     /* 栏目标题 */
     .section-title {
@@ -150,7 +163,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ---------- 安抚语词库（扩充） ----------
+# ---------- 安抚语词库（8条） ----------
 comfort_messages = [
     "💙 别紧张，设备是您的帮手，不是对手。慢慢来，一定能学会！",
     "🌼 您做得很好！每一步都正确，健康自然来。",
@@ -176,7 +189,6 @@ synonyms = {
     "理疗仪": ["理疗", "低频", "按摩", "颈椎", "腰椎"]
 }
 
-
 # ---------- 加载设备数据 ----------
 @st.cache_data
 def load_devices():
@@ -191,67 +203,85 @@ def load_devices():
         st.error("❌ devices.json 格式错误，请检查JSON语法是否正确。")
         return []
 
-
 devices = load_devices()
 
+# ---------- 语音播报功能（TTS） ----------
+def get_tts_html(text):
+    """生成语音播报的HTML+JS代码"""
+    # 转义文本中的特殊字符
+    safe_text = text.replace("`", "\\`").replace("'", "\\'")
+    html_code = f"""
+    <script>
+    (function() {{
+        var utterance = new SpeechSynthesisUtterance(`{safe_text}`);
+        utterance.lang = 'zh-CN';
+        utterance.rate = 0.9;
+        utterance.pitch = 1.1;
+        window.speechSynthesis.speak(utterance);
+    }})();
+    </script>
+    """
+    return html_code
 
-# ---------- 搜索函数（优化版：同义词+模糊匹配） ----------
+def speak_device(device):
+    """组装播报文本并触发语音"""
+    speech_parts = [f"这是{device['name']}的操作步骤。"]
+    for step in device["steps"]:
+        speech_parts.append(f"第{step['step']}步，{step['action']}，{step['detail']}。")
+    speech_parts.append(random.choice(comfort_messages))
+    full_text = "".join(speech_parts)
+    return get_tts_html(full_text)
+
+# ---------- 搜索函数（优化版） ----------
 def search_device(query):
     if not query or not query.strip():
         return None, None
-
+    
     query_lower = query.strip().lower()
-
-    # 1. 精确匹配设备名称或ID
+    
+    # 1. 精确匹配
     for device in devices:
         if device["name"].lower() == query_lower or device["id"].lower() == query_lower:
             return device, "exact"
-
-    # 2. 关键词匹配（设备自带关键词）
+    
+    # 2. 关键词匹配
     for device in devices:
         for kw in device["keywords"]:
             if kw in query_lower:
                 return device, "keyword"
-
-    # 3. 同义词匹配（扩展搜索范围）
+    
+    # 3. 同义词匹配
     for device in devices:
         device_name_lower = device["name"].lower()
         for category, syn_list in synonyms.items():
-            # 检查用户输入是否包含同义词
             for syn in syn_list:
                 if syn in query_lower:
-                    # 检查该设备是否属于这个分类
                     if category in device_name_lower or category in device.get("category", ""):
                         return device, "synonym"
-
-    # 4. 设备名包含匹配（更宽松）
+    
+    # 4. 设备名包含匹配
     for device in devices:
         device_name_lower = device["name"].lower()
-        # 提取用户输入中的核心词
         core_words = ["血压", "血糖", "制氧", "体温", "血氧", "雾化", "轮椅", "助听", "艾灸", "理疗", "按摩", "低频"]
         for word in core_words:
             if word in query_lower and word in device_name_lower:
                 return device, "fuzzy"
-
-    # 5. 完全没匹配到 → 推荐相似设备
+    
     return None, None
 
-
 def get_recommendation(query):
-    """获取推荐设备列表"""
+    """推荐相似设备"""
     query_lower = query.strip().lower()
     recommendations = []
     for device in devices:
         name = device["name"].lower()
-        # 计算简单匹配度
         score = 0
         for char in query_lower:
             if char in name:
                 score += 1
-        if score >= 2:  # 至少有2个字符匹配
+        if score >= 2:
             recommendations.append(device["name"])
-    return recommendations[:3]  # 最多推荐3个
-
+    return recommendations[:3]
 
 # ---------- 界面布局 ----------
 col_search, col_btn = st.columns([4, 1])
@@ -270,9 +300,8 @@ if search_clicked or query:
         st.warning("📝 请先输入设备名称哦！")
     else:
         device, match_type = search_device(query)
-
+        
         if device is None:
-            # 推荐相似设备
             recs = get_recommendation(query)
             if recs:
                 st.error(f"😅 小助手暂未收录「{query}」，您是不是想找：{'、'.join(recs)}？")
@@ -280,8 +309,7 @@ if search_clicked or query:
                 all_names = "、".join([d["name"].split()[0] for d in devices])
                 st.error(f"😅 小助手暂未收录这款设备，试试搜索：{all_names}")
         else:
-            # ---------- 显示搜索结果 ----------
-            # 匹配类型标签
+            # ---------- 匹配标签 ----------
             match_labels = {
                 "exact": "✅ 精确匹配",
                 "keyword": "📌 关键词匹配",
@@ -289,10 +317,22 @@ if search_clicked or query:
                 "fuzzy": "🔄 相关推荐"
             }
             st.caption(match_labels.get(match_type, ""))
-
+            
+            # ---------- 语音播报按钮（放在顶部） ----------
+            with st.container():
+                col_voice, _ = st.columns([1, 3])
+                with col_voice:
+                    # 使用自定义类让按钮变绿色
+                    st.markdown('<div class="voice-btn">', unsafe_allow_html=True)
+                    if st.button("🔊 读给我听", use_container_width=True):
+                        html_js = speak_device(device)
+                        st.components.v1.html(html_js, height=0)
+                        st.success("🔊 正在播报，请打开手机音量！")
+                    st.markdown('</div>', unsafe_allow_html=True)
+            
             # ---------- 三栏布局 ----------
             col1, col2, col3 = st.columns(3)
-
+            
             # 左栏：操作步骤
             with col1:
                 st.markdown('<p class="section-title">📋 操作步骤</p >', unsafe_allow_html=True)
@@ -305,14 +345,14 @@ if search_clicked or query:
                         <div class="step-tip">💙 {step['tip']}</div>
                     </div>
                     """, unsafe_allow_html=True)
-
+                
                 # 随机安抚语
                 st.markdown(f"""
                 <div style="background: #eaf4fa; padding: 16px; border-radius: 14px; margin-top: 16px; text-align: center; font-size: 18px;">
                     {random.choice(comfort_messages)}
                 </div>
                 """, unsafe_allow_html=True)
-
+            
             # 中栏：PDF说明书
             with col2:
                 st.markdown('<p class="section-title">📄 设备说明书</p >', unsafe_allow_html=True)
@@ -325,7 +365,7 @@ if search_clicked or query:
                         st.link_button("📥 点击下载说明书", pdf_url)
                 else:
                     st.info("📌 说明书PDF即将上线，敬请期待。\n\n如需帮助，请咨询客服或查看设备包装内的纸质说明书。")
-
+            
             # 右栏：图文解释 + FAQ
             with col3:
                 st.markdown('<p class="section-title">🧠 图文解释</p >', unsafe_allow_html=True)
@@ -337,14 +377,13 @@ if search_clicked or query:
                         st.warning("⚠️ 图片加载失败，请稍后再试。")
                 else:
                     st.info("📌 图解说明即将上线，敬请期待。\n\n操作步骤已用文字清晰描述，请参考左侧步骤。")
-
+                
                 # FAQ
-                st.markdown('<p class="section-title" style="margin-top: 20px;">❓ 常见问题</p >',
-                            unsafe_allow_html=True)
+                st.markdown('<p class="section-title" style="margin-top: 20px;">❓ 常见问题</p >', unsafe_allow_html=True)
                 for faq in device.get("faq", []):
                     with st.expander(f"Q: {faq['q']}"):
                         st.write(f"A: {faq['a']}")
-
+            
             # ---------- 底部健康小贴士画报 ----------
             st.divider()
             st.markdown(f"""
