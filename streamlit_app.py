@@ -353,18 +353,28 @@ if search_clicked or query:
                 </div>
                 """, unsafe_allow_html=True)
             
-            # 中栏：PDF说明书
-            with col2:
-                st.markdown('<p class="section-title">📄 设备说明书</p >', unsafe_allow_html=True)
-                pdf_url = device.get("pdf_url", "")
-                if pdf_url and pdf_url.strip():
-                    try:
-                        st.pdf(pdf_url, height=450)
-                    except Exception:
-                        st.warning("⚠️ 说明书加载失败，请稍后再试或点击下方下载。")
-                        st.link_button("📥 点击下载说明书", pdf_url)
-                else:
-                    st.info("📌 说明书PDF即将上线，敬请期待。\n\n如需帮助，请咨询客服或查看设备包装内的纸质说明书。")
+           # 中栏：PDF说明书（智能识别链接类型）
+with col2:
+    st.markdown('<p class="section-title">📄 设备说明书</p >', unsafe_allow_html=True)
+    pdf_url = device.get("pdf_url", "")
+    
+    if pdf_url and pdf_url.strip():
+        pdf_url = pdf_url.strip()
+        # 判断是否是真正的PDF直链（以.pdf结尾或包含pdf关键字）
+        if pdf_url.lower().endswith('.pdf') or ('pdf' in pdf_url.lower() and 'http' in pdf_url):
+            try:
+                st.pdf(pdf_url, height=450)
+                # 加一个下载备用按钮
+                st.link_button("📥 下载PDF文件", pdf_url)
+            except Exception:
+                st.warning("⚠️ PDF加载失败，点击下方按钮查看")
+                st.link_button("📖 查看说明书", pdf_url)
+        else:
+            # 网页链接（如百度文库、官网介绍页）
+            st.info("📖 当前为网页版说明书，点击下方按钮查看")
+            st.link_button("📖 查看网页版说明书", pdf_url)
+    else:
+        st.info("📌 说明书PDF即将上线，敬请期待。\n\n如需帮助，请查看设备包装内的纸质说明书。")
             
             # 右栏：图文解释 + FAQ
             with col3:
