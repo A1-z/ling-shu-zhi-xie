@@ -208,7 +208,6 @@ devices = load_devices()
 # ---------- 语音播报功能（TTS） ----------
 def get_tts_html(text):
     """生成语音播报的HTML+JS代码"""
-    # 转义文本中的特殊字符
     safe_text = text.replace("`", "\\`").replace("'", "\\'")
     html_code = f"""
     <script>
@@ -322,7 +321,6 @@ if search_clicked or query:
             with st.container():
                 col_voice, _ = st.columns([1, 3])
                 with col_voice:
-                    # 使用自定义类让按钮变绿色
                     st.markdown('<div class="voice-btn">', unsafe_allow_html=True)
                     if st.button("🔊 读给我听", use_container_width=True):
                         html_js = speak_device(device)
@@ -353,28 +351,28 @@ if search_clicked or query:
                 </div>
                 """, unsafe_allow_html=True)
             
-           # 中栏：PDF说明书（智能识别链接类型）
-with col2:
-    st.markdown('<p class="section-title">📄 设备说明书</p >', unsafe_allow_html=True)
-    pdf_url = device.get("pdf_url", "")
-    
-    if pdf_url and pdf_url.strip():
-        pdf_url = pdf_url.strip()
-        # 判断是否是真正的PDF直链（以.pdf结尾或包含pdf关键字）
-        if pdf_url.lower().endswith('.pdf') or ('pdf' in pdf_url.lower() and 'http' in pdf_url):
-            try:
-                st.pdf(pdf_url, height=450)
-                # 加一个下载备用按钮
-                st.link_button("📥 下载PDF文件", pdf_url)
-            except Exception:
-                st.warning("⚠️ PDF加载失败，点击下方按钮查看")
-                st.link_button("📖 查看说明书", pdf_url)
-        else:
-            # 网页链接（如百度文库、官网介绍页）
-            st.info("📖 当前为网页版说明书，点击下方按钮查看")
-            st.link_button("📖 查看网页版说明书", pdf_url)
-    else:
-        st.info("📌 说明书PDF即将上线，敬请期待。\n\n如需帮助，请查看设备包装内的纸质说明书。")
+            # ---------- 中栏：PDF说明书（智能识别链接类型） ----------
+            with col2:
+                st.markdown('<p class="section-title">📄 设备说明书</p >', unsafe_allow_html=True)
+                pdf_url = device.get("pdf_url", "")
+                
+                if pdf_url and pdf_url.strip():
+                    pdf_url = pdf_url.strip()
+                    # 判断是否是真正的PDF直链（以.pdf结尾或包含pdf关键字）
+                    if pdf_url.lower().endswith('.pdf') or ('pdf' in pdf_url.lower() and 'http' in pdf_url):
+                        try:
+                            st.pdf(pdf_url, height=450)
+                            # 加一个下载备用按钮
+                            st.link_button("📥 下载PDF文件", pdf_url)
+                        except Exception:
+                            st.warning("⚠️ PDF加载失败，点击下方按钮查看")
+                            st.link_button("📖 查看说明书", pdf_url)
+                    else:
+                        # 网页链接（如百度文库、官网介绍页）
+                        st.info("📖 当前为网页版说明书，点击下方按钮查看")
+                        st.link_button("📖 查看网页版说明书", pdf_url)
+                else:
+                    st.info("📌 说明书PDF即将上线，敬请期待。\n\n如需帮助，请查看设备包装内的纸质说明书。")
             
             # 右栏：图文解释 + FAQ
             with col3:
