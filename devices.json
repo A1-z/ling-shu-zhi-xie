@@ -11,7 +11,7 @@
         {"step": 3, "icon": "📊", "action": "读数值", "detail": "保持安静，等待屏幕数值稳定。高压(收缩压)低于120，低压(舒张压)低于80为正常范围。", "tip": "测量前静坐5分钟，结果更准哦！"}
       ],
       "pdf_url": "https://wenku.so.com/d/07ddfaf88e8bae74f53cf300cf40fca1",
-      "image_url": "",
+      "image_url": "https://link.wtturl.cn/?target=https%3A%2F%2Fcms-oss.yuwell.com%2Fattachment%2F9db1bed91bfc44aea8f7339f1e339eeb.pdf&scene=im&aid=582478&lang=zh",
       "faq": [
         {"q": "电池怎么装？", "a": "打开底部电池盖，按正负极标识装入4节7号电池。"},
         {"q": "为什么测出来偏高？", "a": "可能是袖带绑得太紧或测量时说话，请静坐5分钟后重测。"}
@@ -28,7 +28,7 @@
         {"step": 3, "icon": "📊", "action": "读取结果", "detail": "等待5-8秒，屏幕显示血糖值。空腹3.9-6.1为正常，餐后低于7.8为正常。", "tip": "记录每次数值，复诊时带给医生看。"}
       ],
       "pdf_url": "https://wenku.so.com/d/8c6c886e611ffc2c10b8c0fb4307f35b",
-      "image_url": "",
+      "image_url": "https://link.wtturl.cn/?target=https%3A%2F%2Fwww.yuwell.com%2Fupload%2Fmanual%2F582glucometer.pdf&scene=im&aid=582478&lang=zh",
       "faq": [
         {"q": "试纸过期了还能用吗？", "a": "绝对不能！过期试纸结果不准，请使用保质期内的试纸。"},
         {"q": "采血针能重复用吗？", "a": "不能！每次必须换新的采血针，避免感染。"}
@@ -45,7 +45,7 @@
         {"step": 3, "icon": "😤", "action": "戴鼻氧管", "detail": "将鼻氧管接头插入出氧口，戴好鼻塞，调节流量至医生建议的数值（通常1-3L/min）。", "tip": "吸氧时间每次15-30分钟，不要长时间连续吸。"}
       ],
       "pdf_url": "https://wenku.so.com/d/a55e0f389c622498311a4048c68c31251",
-      "image_url": "",
+      "image_url": "https://cms-oss.yuwell.com/file/oxygen-y u300-manual.pd",
       "faq": [
         {"q": "制氧机有异味怎么办？", "a": "检查湿化瓶是否干净，更换纯净水；若仍有异味，可能是滤芯需要更换。"},
         {"q": "流量调多大合适？", "a": "遵医嘱。保健吸氧一般1-2L/min，治疗吸氧遵医嘱调整。"}
@@ -62,7 +62,7 @@
         {"step": 3, "icon": "📊", "action": "读取结果", "detail": "按下测量键，约1秒听到'滴'声后取出，屏幕显示体温。正常范围：36.5-37.2℃。", "tip": "超过37.3℃为低烧，超过38.5℃建议就医。"}
       ],
       "pdf_url": "ttps://wenku.so.com/d/eacabb0be28999e958dc32b29e18b074",
-      "image_url": "",
+      "image_url": "https://link.wtturl.cn/?target=https%3A%2F%2Fwww.yuwell.com%2Fupload%2Fmanual%2Fyht101.pdf&scene=im&aid=582478&lang=zh",
       "faq": [
         {"q": "耳温枪测左耳和右耳结果不一样？", "a": "左右耳温度可能相差0.1-0.2℃，建议固定测同一侧耳。"},
         {"q": "耳温枪需要校准吗？", "a": "每年建议送检校准一次，家用一般不需要频繁校准。"}
@@ -79,7 +79,7 @@
         {"step": 3, "icon": "📊", "action": "读结果", "detail": "等待约10秒，屏幕显示血氧饱和度（SpO2）和脉率。正常血氧：95%-100%，脉率：60-100次/分钟。", "tip": "血氧低于94%建议及时就医。"}
       ],
       "pdf_url": "https://manuals.plus/yuwell/yx110-finger-pulse-oximeter-manual.pdf",
-      "image_url": "",
+      "image_url": "https://link.wtturl.cn/?target=https%3A%2F%2Fcms-oss.yuwell.com%2Fattach%2Fyx310-manual.pdf&scene=im&aid=582478&lang=zh",
       "faq": [
         {"q": "指甲油影响测量吗？", "a": "会影响！深色指甲油会阻挡红外线，导致读数不准，请先卸掉。"},
         {"q": "血氧仪显示不出数字？", "a": "检查手指是否放正，或尝试换一只手重新测量。"}
@@ -96,7 +96,7 @@
         {"step": 3, "icon": "🔘", "action": "开机雾化", "detail": "按下【电源】键，雾化开始，保持平稳呼吸，雾化时间约10-15分钟。", "tip": "雾化结束后及时清洗雾化杯，防止细菌滋生。"}
       ],
       "pdf_url": "https://wenku.so.com/d/e784eecf69fd0dcac07a8956a8997dec",
-      "image_url": "",
+      "image_url": "https://link.wtturl.cn/?target=https%3A%2F%2Fm.yuwell.com%2Fweb%2Fupload%2F2019%2F06%2F08%2F1559954647396337gp1.pdf&scene=im&aid=582478&lang=zh",
       "faq": [
         {"q": "雾化器不出雾怎么办？", "a": "检查药液是否太少或太多，清洗雾化杯喷嘴，确认电源接触良好。"},
         {"q": "雾化后需要漱口吗？", "a": "需要！雾化后漱口可以减少药物在口腔残留，预防口腔真菌感染。"}
@@ -113,7 +113,7 @@
         {"step": 3, "icon": "🔒", "action": "刹车固定", "detail": "停稳后，将两侧手刹向后拉至锁定位置，确保轮椅不会滑动。", "tip": "上下轮椅前必须锁住刹车，安全第一！"}
       ],
       "pdf_url": "https://oxygenium.gr/wp-content/uploads/2022/12/User_Guide_AC74_Oxygenium_Medical_EN.pdf",
-      "image_url": "",
+      "image_url": "https://link.wtturl.cn/?target=https%3A%2F%2Fcms-oss.yuwell.com%2Fattach%2Fd210-wheelchair.pdf&scene=im&aid=582478&lang=zh",
       "faq": [
         {"q": "轮椅能上斜坡吗？", "a": "可以，但必须有照护者从后方协助，推上斜坡时身体前倾，增加稳定性。"},
         {"q": "轮椅轮胎需要充气吗？", "a": "实心胎不需要充气；充气胎建议每月检查气压，保持正常压力。"}
@@ -163,7 +163,7 @@
         {"step": 2, "icon": "🔄", "action": "贴电极片", "detail": "将电极片贴在疼痛部位的两侧，两片间距约5-10cm，避免直接贴在骨头上。", "tip": "电极片不能贴在有伤口、皮疹或心脏起搏器附近。"},
         {"step": 3, "icon": "📳", "action": "调节模式", "detail": "按【电源】开机，选择模式（按摩/针灸/推拿），调节强度至舒适感（有轻微刺麻感但不疼痛）。", "tip": "每次使用15-30分钟，从低强度开始，逐渐适应。"}
       ],
-      "pdf_url": "",
+      "pdf_url": "https://link.wtturl.cn/?target=https%3A%2F%2Fwww.yuwell.com%2Fupload%2Fmanual%2Fyh360.pdf&scene=im&aid=582478&lang=zh",
       "image_url": "",
       "faq": [
         {"q": "理疗仪能每天用吗？", "a": "建议每天1次，连续使用不超过15天，休息几天后再用。"},
