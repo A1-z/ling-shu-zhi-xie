@@ -78,7 +78,7 @@
         {"step": 2, "icon": "🔘", "action": "按开机", "detail": "按下顶部的【电源】键，屏幕亮起并开始闪烁检测。", "tip": "手不要抖动，保持静坐状态。"},
         {"step": 3, "icon": "📊", "action": "读结果", "detail": "等待约10秒，屏幕显示血氧饱和度（SpO2）和脉率。正常血氧：95%-100%，脉率：60-100次/分钟。", "tip": "血氧低于94%建议及时就医。"}
       ],
-      "pdf_url": "",
+      "pdf_url": "https://manuals.plus/yuwell/yx110-finger-pulse-oximeter-manual.pdf",
       "image_url": "",
       "faq": [
         {"q": "指甲油影响测量吗？", "a": "会影响！深色指甲油会阻挡红外线，导致读数不准，请先卸掉。"},
@@ -112,7 +112,7 @@
         {"step": 2, "icon": "🦶", "action": "放下脚踏板", "detail": "将两侧脚踏板向下翻转至水平位置，确保踏板卡紧。", "tip": "坐稳后再放脚踏板，避免夹到脚。"},
         {"step": 3, "icon": "🔒", "action": "刹车固定", "detail": "停稳后，将两侧手刹向后拉至锁定位置，确保轮椅不会滑动。", "tip": "上下轮椅前必须锁住刹车，安全第一！"}
       ],
-      "pdf_url": "",
+      "pdf_url": "https://oxygenium.gr/wp-content/uploads/2022/12/User_Guide_AC74_Oxygenium_Medical_EN.pdf",
       "image_url": "",
       "faq": [
         {"q": "轮椅能上斜坡吗？", "a": "可以，但必须有照护者从后方协助，推上斜坡时身体前倾，增加稳定性。"},
